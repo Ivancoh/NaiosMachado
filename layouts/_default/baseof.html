@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="{{ site.Language.LanguageCode | default "pt-BR" }}">
+  <head>
+    {{ partial "head/head.html" . }}
+  </head>
+  <body>
+    {{ block "main" . }}{{ end }}
+
+    <footer class="site-footer">
+      <p>Naios Machado &copy; {{ now.Year }} </p>
+    </footer>
+
+    {{ partial "footer/script-footer.html" . }}
+  </body>
+</html>

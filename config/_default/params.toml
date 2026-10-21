@@ -1,0 +1,9 @@
+# Parâmetros de identidade do CLIENTE (fotógrafo)
+# Trocar aqui para reusar o mesmo nicho com outro fotógrafo.
+[cliente]
+  nome = "Naios Machado"
+  estudio = "Naios Machado"
+  cidade = "Porto Alegre"
+  whatsapp = "5511999999999"
+  email = "contato@exemplo.com"
+  dataFile = "clientes/fotografo-exemplo"   # aponta para data/clientes/...

@@ -1,0 +1,31 @@
+{{ define "main" }}
+  {{ $foodCss := resources.Get "css/food/food.css" | fingerprint }}
+  <link rel="stylesheet" href="{{ $foodCss.RelPermalink }}" integrity="{{ $foodCss.Data.Integrity }}">
+
+  {{ $nicho := index hugo.Data "food" }}
+  {{ $cliente := index hugo.Data.clientes "fotografo-exemplo" }}
+  {{ $cover := .Params.cover | default "/images/food/default-cover.jpg" }}
+
+  
+
+  <main class="food-list" data-nicho="food">
+    <h1 style="color:#000;">TESTE — se você vê isso, o template funciona</h1>
+    <p>{{ .Title }}</p>
+    <p>{{ .Description }}</p>
+    <p>{{ $cliente.identidade.manifesto }}</p>
+
+    <h2>Dores</h2>
+    <ul>
+      {{ range $nicho.dores }}
+        <li><strong>{{ .titulo }}</strong> — {{ .descricao }}</li>
+      {{ end }}
+    </ul>
+
+    <h2>Portfólio</h2>
+    {{ range .Pages }}
+      <a href="{{ .RelPermalink }}" style="display:block; color:#000;">
+        <h3>{{ .Title }}</h3>
+      </a>
+    {{ end }}
+  </main>
+{{ end }}

@@ -1,0 +1,48 @@
+  {{ define "main" }}
+  {{ $foodCss := resources.Get "css/food/food.css" | fingerprint }}
+  <link rel="stylesheet" href="{{ $foodCss.RelPermalink }}" integrity="{{ $foodCss.Data.Integrity }}">
+
+  {{ $cover := .Params.cover | default "/images/food/default-cover.jpg" }}
+
+  
+
+  <main class="food-single" data-nicho="food">
+    <header>
+      <h1>{{ .Title }}</h1>
+      {{ with .Params.cliente }}<p>{{ . }}</p>{{ end }}
+    </header>
+
+    <div class="food-carousel" data-food-carousel>
+      {{ range .Params.gallery }}
+       <div class="food-carousel__slide">
+         <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+       </div>
+      {{ end }}
+    </div>
+	
+	<dialog id="lightbox" class="food-lightbox">
+      <button class="food-lightbox__close" aria-label="Fechar" data-lightbox-close>×</button>
+      <img src="" alt="" class="food-lightbox__image" data-lightbox-image>
+      <nav class="food-lightbox__nav" aria-label="Navegação">
+        <button data-lightbox-prev aria-label="Anterior">←</button>
+        <button data-lightbox-next aria-label="Próxima">→</button>
+      </nav>
+    </dialog>
+	
+	<div class="food-thumbnails" data-thumbnails>
+      {{ range $i, $img := .Params.gallery }}
+        <button class="food-thumbnails__item" data-thumbnail="{{ $i }}">
+          <img src="{{ $img }}" alt="Miniatura {{ add $i 1 }}" loading="lazy">
+        </button>
+      {{ end }}
+    </div>
+
+   <!-- Navegação por setas (opcional, mas melhora usabilidade em desktop) -->
+    <nav class="food-carousel__nav" aria-label="Navegação da galeria">
+     <button data-carousel-prev aria-label="Imagem anterior">←</button>
+     <button data-carousel-next aria-label="Próxima imagem">→</button>
+    </nav>
+    {{ $js := resources.Get "js/food/carousel.js" | js.Build (dict "minify" true "target" "es2015") | fingerprint }}
+    <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+  </main>
+{{ end }}

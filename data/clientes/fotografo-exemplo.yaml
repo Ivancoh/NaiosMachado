@@ -1,0 +1,17 @@
+identidade:
+  nome: "Fotógrafo Exemplo"
+  manifesto: |
+    Foto de comida não é sobre comida.
+    É sobre a decisão que o cliente toma antes do primeiro garfo.
+
+paleta:
+  primaria: "#0f0f0f"
+  secundaria: "#b8894a"
+  acento: "#e63946"
+  fundo: "#faf7f2"
+
+contato:
+  whatsapp: "5511999999999"
+  retrato: "/images/retrato.jpg"
+  instagram: "https://www.instagram.com/naiosmachado/"
+  behance: https://www.behance.net/naiospiamachado1?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAcGRvZgJzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAafCdT2Zf1596na8Id4NVqP0XrpnHiYJ9TCDu15z1IJxVSOWlu_jS3stkAE_oA_aem_OgAoC6M1a3YxG_8VS9JkUw

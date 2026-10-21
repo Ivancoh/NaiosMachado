@@ -1,0 +1,43 @@
+<div class="case-header-top">
+  <button class="case-close-btn" data-close-case aria-label="Fechar case">
+    <span>Fechar</span>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="2.5"
+         stroke-linecap="round" aria-hidden="true">
+      <line x1="6" y1="6" x2="18" y2="18"/>
+      <line x1="18" y1="6" x2="6" y2="18"/>
+    </svg>
+  </button>
+</div>
+
+<header class="case-header">
+  <h2>{{ .Title }}</h2>
+  {{ with .Params.cliente }}<p>{{ . }}</p>{{ end }}
+</header>
+
+<div class="food-carousel" data-food-carousel>
+  {{ range .Params.gallery }}
+    <div class="food-carousel__slide">
+      <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+    </div>
+  {{ end }}
+</div>
+
+<div class="food-thumbnails" data-thumbnails>
+  {{ range $i, $img := .Params.gallery }}
+    <button class="food-thumbnails__item" data-thumbnail="{{ $i }}">
+      <img src="{{ $img }}" alt="Miniatura {{ add $i 1 }}" loading="lazy">
+    </button>
+  {{ end }}
+</div>
+
+<div class="case-content">{{ .Content }}</div>
+
+<dialog id="lightbox" class="food-lightbox">
+  <button class="food-lightbox__close" aria-label="Fechar" data-lightbox-close>×</button>
+  <img src="" alt="" class="food-lightbox__image" data-lightbox-image>
+  <nav class="food-lightbox__nav" aria-label="Navegação">
+    <button data-lightbox-prev aria-label="Anterior">←</button>
+    <button data-lightbox-next aria-label="Próxima">→</button>
+  </nav>
+</dialog>

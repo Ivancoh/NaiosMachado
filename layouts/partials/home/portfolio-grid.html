@@ -1,0 +1,19 @@
+{{ $portfolio := where site.RegularPages "Section" "portfolio" }}
+{{ warnf "portfolio count: %d" (len $portfolio) }}
+<div class="home-portfolio">
+  <div class="home-portfolio__grid">
+    {{ range $portfolio }}
+      <button
+        class="portfolio-card"
+        data-case-slug="{{ .File.ContentBaseName }}"
+        data-case-url="{{ .RelPermalink }}"
+        aria-label="Abrir case {{ .Title }}"
+      >
+        {{ with .Params.cover }}
+          <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy" decoding="async">
+        {{ end }}
+        <span class="portfolio-card__title">{{ .Title }}</span>
+      </button>
+    {{ end }}
+  </div>
+</div>

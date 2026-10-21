@@ -1,0 +1,31 @@
+</aside>{{ $cliente := index hugo.Data.clientes "fotografo-exemplo" }}
+<aside class="home-sidebar home-sidebar--left">
+  <h1 class="home-sidebar__name">
+    <span class="home-sidebar__first">Naios</span>
+    <span class="home-sidebar__last">Machado</span>
+  </h1>
+
+  <figure class="home-sidebar__portrait" style="--foto-url: url('{{ $cliente.retrato | default "/images/retrato.jpg" }}')">
+  <div class="home-sidebar__portrait-bg" aria-hidden="true"></div>
+  <img src="{{ $cliente.retrato | default "/images/retrato.jpg" }}"
+       alt="Naios Machado" loading="eager">
+</figure>
+
+  <ul class="home-sidebar__contacts">
+  <li>
+    <a href="https://wa.me/{{ $cliente.contato.whatsapp }}" target="_blank" rel="noopener" aria-label="WhatsApp">
+      {{ partial "social-icon.html" "whatsapp" }}
+    </a>
+  </li>
+  <li>
+    <a href="{{ $cliente.contato.instagram }}" target="_blank" rel="noopener" aria-label="Instagram">
+      {{ partial "social-icon.html" "instagram" }}
+    </a>
+  </li>
+  <li>
+    <a href="{{ $cliente.contato.behance }}" target="_blank" rel="noopener" aria-label="Behance">
+      {{ partial "social-icon.html" "behance" }}
+    </a>
+  </li>
+  </ul>
+</aside>

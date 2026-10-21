@@ -1,0 +1,29 @@
+baseURL = "https://exemplo.com/"
+locale = "pt-BR"
+title = "Naios Machado"
+
+theme = 'hugo-bootstrap-theme'
+themesdir = 'node_modules/@filipecarneiro'
+
+[mediaTypes]
+  [mediaTypes."text/netlify"]
+    delimiter = ""
+    suffixes = [""]
+
+[outputFormats]
+  [outputFormats.HEADERS]
+    mediaType = "text/netlify"
+    baseName = "_headers"
+    isPlainText = true
+    notAlternative = true
+
+[outputs]
+  home = ["HTML", "RSS", "HEADERS"]
+
+[params]
+  description = "Fotografia gastronômica para restaurantes"
+  copyright = "Naios Machado"
+  contentSecurityPolicy = "default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; worker-src 'self' blob:; object-src 'none'; base-uri 'none'; frame-ancestors 'none'"
+
+  [params.options]
+    breadCrumbSchema = true

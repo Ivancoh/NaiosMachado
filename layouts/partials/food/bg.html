@@ -1,0 +1,11 @@
+{{/* partials/food/bg.html */}}
+{{ $image := .image | default "" }}
+
+<div
+  class="food-bg"
+  data-food-bg
+  data-image="{{ $image }}"
+  aria-hidden="true"></div>
+
+{{ $js := resources.Get "js/food/food-bg.js" | js.Build (dict "minify" true "target" "es2015") | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>

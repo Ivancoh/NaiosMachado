@@ -1,0 +1,23 @@
+# Dados reutilizáveis para QUALQUER fotógrafo de comida.
+# Não contém nada específico de um cliente.
+nicho:
+  nome: "Fotografia Gastronômica"
+  slug: "food"
+
+dores:
+  - titulo: "Cardápio com foto amadora"
+    descricao: "O cliente decide pelo iFood, não pelo salão."
+  - titulo: "Delivery que não vende"
+    descricao: "Foto escura ou mal enquadrada derruba conversão."
+  - titulo: "Sem identidade visual"
+    descricao: "Cada prato parece de um restaurante diferente."
+
+cta:
+  raioX: "Raio-X do cardápio"
+  contato: "Agendar sessão"
+
+stack:
+  - "Sony A7 IV"
+  - "Lente macro 90mm"
+  - "Iluminação contínua"
+  - "Pós em Capture One"
