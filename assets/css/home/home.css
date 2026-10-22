@@ -416,27 +416,25 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  /* Padding para o nome respirar em telas pequenas */
   padding: 1rem;
   box-sizing: border-box;
 }
 
 #splash-name {
   display: flex;
-  flex-wrap: nowrap;                 /* não quebrar em 2 linhas */
+  flex-wrap: nowrap;
   gap: 0.2em;
   margin: 0;
   font-family: 'Anton', system-ui, sans-serif;
-  /* Fonte adaptativa: cresce até caber */
-  font-size: clamp(2rem, min(18vw, 22vh), 15rem);
+  /* Tamanho base grande — o JS reduz via scale() se não couber */
+  font-size: clamp(4rem, 22vw, 15rem);
   color: #EEEBE3;
   text-transform: uppercase;
   letter-spacing: -0.02em;
   line-height: 1;
   white-space: nowrap;
-  /* Centraliza visualmente e não deixa estourar */
-  max-width: 100%;
-  justify-content: center;
+  transform-origin: center center;
+  will-change: transform;
 }
 
 .splash-word {
