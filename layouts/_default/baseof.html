@@ -4,10 +4,17 @@
     {{ partial "head/head.html" . }}
   </head>
   <body>
+    <div id="splash-screen" aria-hidden="true">
+      <h1 id="splash-name">
+        <span class="splash-word" id="splash-first">Naios</span>
+        <span class="splash-word" id="splash-last">Machado</span>
+      </h1>
+    </div>
+
     {{ block "main" . }}{{ end }}
 
     <footer class="site-footer">
-      <p>Naios Machado &copy; {{ now.Year }} </p>
+      <p>Naios Machado &copy; {{ now.Year }}</p>
     </footer>
 
     {{ partial "footer/script-footer.html" . }}

@@ -1,4 +1,8 @@
 {{ define "main" }}
+
+  {{ $introJs := resources.Get "js/home/intro.js" | js.Build (dict "minify" true "target" "es2015") | fingerprint }}
+  <script src="{{ $introJs.RelPermalink }}" integrity="{{ $introJs.Data.Integrity }}" defer></script>
+  
   {{ $homeCss := resources.Get "css/home/home.css" | fingerprint }}
   <link rel="stylesheet" href="{{ $homeCss.RelPermalink }}" integrity="{{ $homeCss.Data.Integrity }}">
 
@@ -29,8 +33,6 @@
 
   {{ $carouselJs := resources.Get "js/food/carousel.js" | js.Build (dict "minify" true "target" "es2015") | fingerprint }}
    <script src="{{ $carouselJs.RelPermalink }}" integrity="{{ $carouselJs.Data.Integrity }}" defer></script>
-
-  <script src="{{ $carouselJs.RelPermalink }}" integrity="{{ $carouselJs.Data.Integrity }}" defer></script>
 
   {{ $gridJs := resources.Get "js/home/grid.js" | js.Build (dict "minify" true "target" "es2015") | fingerprint }}
   <script src="{{ $gridJs.RelPermalink }}" integrity="{{ $gridJs.Data.Integrity }}" defer></script>

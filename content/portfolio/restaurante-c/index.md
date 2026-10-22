@@ -1,7 +1,7 @@
 ---
 title: "Restaurante C"
 date: 2026-10-15
-cover: "/images/food/restaurante-a/cover.jpg"
+cover: "/images/food/restaurante-c/cover.jpg"
 cliente: "Restaurante C"
 servicos: ["Cardápio", "Delivery", "Ambiente"]
 gallery:

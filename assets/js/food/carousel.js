@@ -22,7 +22,7 @@ const updateBackground = async (imageUrl, bgEl) => {
 	console.log('[food] gradient aplicado:', gradient);   // debug
   } catch (error) {
     console.error('[food] erro ao extrair cores:', error);
-    bgEl.style.backgroundColor = '#0F0F0F';
+    bgEl.style.backgroundColor = '#1A1A1A';
   }
 };
 
