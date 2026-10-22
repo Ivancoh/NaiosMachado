@@ -416,19 +416,27 @@ body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  /* Padding para o nome respirar em telas pequenas */
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 #splash-name {
   display: flex;
+  flex-wrap: nowrap;                 /* não quebrar em 2 linhas */
   gap: 0.2em;
   margin: 0;
   font-family: 'Anton', system-ui, sans-serif;
-  font-size: clamp(4rem, 18vw, 15rem);
+  /* Fonte adaptativa: cresce até caber */
+  font-size: clamp(2rem, min(18vw, 22vh), 15rem);
   color: #EEEBE3;
   text-transform: uppercase;
   letter-spacing: -0.02em;
   line-height: 1;
   white-space: nowrap;
+  /* Centraliza visualmente e não deixa estourar */
+  max-width: 100%;
+  justify-content: center;
 }
 
 .splash-word {
