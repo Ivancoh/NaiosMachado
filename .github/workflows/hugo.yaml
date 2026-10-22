@@ -50,7 +50,7 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --baseURL "https://ivancoh.github.io/NaiosMachado/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
